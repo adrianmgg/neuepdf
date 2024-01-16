@@ -6,7 +6,14 @@ use cursive::{
 };
 
 fn main() {
+    cursive::logger::init();
+    log::set_max_level(log::LevelFilter::Info);
+
     let mut siv = cursive::default();
+
+    siv.add_global_callback('q', cursive::Cursive::quit);
+    siv.add_global_callback('~', cursive::Cursive::toggle_debug_console);
+
     let navbar = LinearLayout::horizontal()
         .child(Button::new("dashboard", |_| {}))
         .full_width()

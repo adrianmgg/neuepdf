@@ -7,4 +7,5 @@ edition = "2021"
 
 [dependencies]
 cursive = "0.20.0"
+log = "0.4.20"
 tumblr_api = "0.1.1"
